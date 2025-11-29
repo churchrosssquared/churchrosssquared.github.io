@@ -212,8 +212,42 @@ footer {
   }
 
   .playlist {
-    max-height: 320px; /* keep the playlist usable without taking whole screen */
-    overflow: auto;
+    max-height: none; /* remove height constraint on mobile */
+    overflow: visible;
+  }
+
+  /* Mobile: single column grid for better readability */
+  .playlist.grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* Mobile: horizontal card layout with smaller thumbnail */
+  .item {
+    flex-direction: row;
+    padding: 8px;
+    gap: 12px;
+  }
+
+  .item img {
+    width: 120px;
+    height: 68px;
+    flex-shrink: 0;
+  }
+
+  .item .meta {
+    flex: 1;
+    min-width: 0; /* allow text to wrap */
+  }
+
+  .item .title {
+    font-size: 14px;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   .logo {
