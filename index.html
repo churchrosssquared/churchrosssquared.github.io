@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Playlist Viewer — churchrosssquared</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-hero">
+      <div class="hero-inner wrap">
+        <div class="branding">
+          <div class="logo" aria-hidden="true">✝️</div>
+          <div class="titles">
+            <h1>Church @ Ross Squared</h1>
+            <p class="subtitle">
+              Home-based church — sermons and teaching by Brevenal Ross
+            </p>
+          </div>
+        </div>
+        <!-- Playlist ID removed from public UI. Configure `config.js` with the playlist id and API key. -->
+      </div>
+    </header>
+
+    <main class="wrap content">
+      <section class="controls">
+        <button id="loadBtn">Load playlist items</button>
+
+        <div class="layout-toggle">
+          <label
+            ><input type="radio" name="layout" value="grid" checked />
+            Grid</label
+          >
+          <label><input type="radio" name="layout" value="list" /> List</label>
+        </div>
+      </section>
+
+      <section id="playerAndList" class="player-list">
+        <div class="player">
+          <!-- Embedded player (src will be set by script.js if configured) -->
+          <iframe
+            id="embedPlayer"
+            width="560"
+            height="315"
+            src=""
+            title="YouTube playlist player"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div id="playlistContainer" class="playlist grid"></div>
+      </section>
+
+      <div id="status" class="status" aria-live="polite"></div>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
