@@ -1,64 +1,372 @@
-:root{
-  --max-width:1100px;
-  --gap:14px;
-  --accent:#8a5a2b; /* warm gold/brown */
-  --muted:#6b6b6b;
-  --bg:#fbfaf8;
-  --card:#ffffff;
-  --accent-2:#2b4a6f; /* deep blue for headings */
-  --shadow: 0 6px 18px rgba(35,30,20,0.08);
+:root {
+  --max-width: 1100px;
+  --gap: 14px;
+  --accent: #8a5a2b; /* warm gold/brown */
+  --muted: #6b6b6b;
+  --bg: #fbfaf8;
+  --card: #ffffff;
+  --accent-2: #2b4a6f; /* deep blue for headings */
+  --shadow: 0 6px 18px rgba(35, 30, 20, 0.08);
 }
-html,body{height:100%;}
-body{
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  margin:0;
-  color:#222;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  color: #222;
   background: linear-gradient(180deg, #fbfbfb 0%, var(--bg) 100%);
-  display:flex;
-  justify-content:center;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
-.wrap{
-  width:100%;
-  max-width:var(--max-width);
-  padding:28px 20px;
+.wrap {
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 28px 20px;
 }
-h1{margin:0 0 6px 0;font-family:'Merriweather', serif;color:var(--accent-2);letter-spacing:0.2px}
-.subtitle{margin:0;color:var(--muted);font-weight:400}
-.lead{margin-top:0;color:var(--muted)}
+h1 {
+  margin: 0 0 6px 0;
+  font-family: "Merriweather", serif;
+  color: var(--accent-2);
+  letter-spacing: 0.2px;
+}
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 400;
+}
+.lead {
+  margin-top: 0;
+  color: var(--muted);
+}
 
 /* Hero */
-.site-hero{background:linear-gradient(90deg, rgba(43,74,111,0.06), rgba(138,90,43,0.03));border-bottom:1px solid rgba(0,0,0,0.04)}
-.hero-inner{display:flex;align-items:center;gap:12px;padding:22px 20px}
-.branding{display:flex;align-items:center;gap:14px}
-.logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(180deg,var(--accent),#b0723f);display:flex;align-items:center;justify-content:center;color:white;font-size:22px;box-shadow:var(--shadow)}
-.titles h1{font-size:20px;margin:0}
+.site-hero {
+  background: linear-gradient(
+    90deg,
+    rgba(43, 74, 111, 0.06),
+    rgba(138, 90, 43, 0.03)
+  );
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  width: 100%;
+}
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 22px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, var(--accent), #b0723f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 22px;
+  box-shadow: var(--shadow);
+}
+.titles h1 {
+  font-size: 20px;
+  margin: 0;
+}
 
 /* Controls and content */
-.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:16px 0}
-.controls input#apiKey{min-width:260px;padding:10px;border:1px solid #eee;border-radius:8px;background:white}
-.controls button{padding:10px 14px;background:var(--accent);color:#fff;border:none;border-radius:10px;cursor:pointer;box-shadow:0 6px 14px rgba(138,90,43,0.12);font-weight:600}
-.controls button:active{transform:translateY(1px)}
-.controls .layout-toggle{margin-left:auto;display:flex;gap:10px;align-items:center}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin: 16px 0;
+}
+.controls input#apiKey {
+  min-width: 260px;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background: white;
+}
+.controls button {
+  padding: 10px 14px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(138, 90, 43, 0.12);
+  font-weight: 600;
+}
+.controls button:active {
+  transform: translateY(1px);
+}
+.controls .layout-toggle {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
 
-.content{padding-top:18px}
-.player-list{display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start}
-.player iframe{width:100%;height:360px;border-radius:12px;border:0;box-shadow:var(--shadow)}
+.content {
+  padding-top: 18px;
+}
+.player-list {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 18px;
+  align-items: start;
+}
+.player iframe {
+  width: 100%;
+  height: 360px;
+  border-radius: 12px;
+  border: 0;
+  box-shadow: var(--shadow);
+}
 
-.playlist{padding:6px;display:flex;flex-direction:column;gap:12px;max-height:640px;overflow:auto}
-.playlist.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
-.item{background:var(--card);border-radius:10px;padding:10px;display:flex;gap:10px;align-items:flex-start;box-shadow:var(--shadow);transition:transform .12s ease,box-shadow .12s ease}
-.item:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(30,30,30,0.12)}
-.item img{width:180px;height:100px;object-fit:cover;border-radius:8px}
-.item .meta{display:flex;flex-direction:column}
-.item .title{font-size:15px;margin:0 0 6px 0;color:var(--accent-2)}
-.item .meta a{color:var(--accent);text-decoration:none;font-size:13px}
-.item.list{flex-direction:row}
+.playlist {
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 640px;
+  overflow: auto;
+}
+.playlist.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
+}
+.item {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  box-shadow: var(--shadow);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(30, 30, 30, 0.12);
+}
+.item img {
+  width: 180px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.item .meta {
+  display: flex;
+  flex-direction: column;
+}
+.item .title {
+  font-size: 15px;
+  margin: 0 0 6px 0;
+  color: var(--accent-2);
+}
+.item .meta a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 13px;
+}
+.item.list {
+  flex-direction: row;
+}
 
-.status{margin-top:12px;color:var(--muted)}
-footer{margin-top:22px;color:var(--muted);font-size:14px}
+.status {
+  margin-top: 12px;
+  color: var(--muted);
+}
+footer {
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 14px;
+}
 
-@media (max-width:980px){
-  .player-list{grid-template-columns:1fr}
-  .player iframe{height:260px}
-  .logo{width:48px;height:48px}
+@media (max-width: 980px) {
+  /* Stack playlist above player on small screens for better UX */
+  .player-list {
+    display: flex;
+    flex-direction: column-reverse; /* playlist (second child) appears first */
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .player iframe {
+    height: 260px;
+  }
+
+  .playlist {
+    max-height: 320px; /* keep the playlist usable without taking whole screen */
+    overflow: auto;
+  }
+
+  .logo {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Hero: stack branding on top on small screens so it doesn't take over layout */
+@media (max-width: 560px) {
+  .site-hero {
+    padding-bottom: 8px;
+  }
+  .hero-inner {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 12px;
+  }
+  .branding {
+    gap: 10px;
+    justify-content: center;
+    max-width: 92%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+  .titles {
+    text-align: center;
+  }
+  .titles h1 {
+    font-size: 18px;
+  }
+  .subtitle {
+    font-size: 13px;
+  }
+  .hero-note {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Broader small-screen rule to ensure branding centers when space is constrained */
+@media (max-width: 720px) {
+  .hero-inner {
+    justify-content: center;
+  }
+  .branding {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .branding .titles {
+    text-align: center;
+  }
+  .branding .logo {
+    margin-right: 10px;
+  }
+}
+
+/* Strong centering rule for narrow mobile viewports (e.g. 412px wide phones) */
+@media (max-width: 420px) {
+  .site-hero {
+    padding-bottom: 6px;
+  }
+  .site-hero .hero-inner {
+    padding-left: 12px;
+    padding-right: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center;
+  }
+  .site-hero .branding {
+    width: 100% !important;
+    max-width: 100%;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px;
+  }
+  .site-hero .branding .logo {
+    margin: 0;
+  }
+  .site-hero .titles {
+    text-align: center;
+  }
+  /* Strong overrides to ensure titles are centered and do not float left */
+  .site-hero .hero-inner.wrap {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center !important;
+  }
+  .site-hero .branding {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .site-hero .titles {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* Force the branding to stretch full-width on narrow screens so it centers properly */
+@media (max-width: 480px) {
+  .site-hero .hero-inner.wrap,
+  .site-hero .hero-inner {
+    align-items: stretch !important;
+  }
+  .site-hero .branding {
+    width: 100% !important;
+    max-width: 100% !important;
+    align-self: stretch !important;
+    display: flex !important;
+    /* Stack logo over titles and allow branding to grow to full width */
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+  .site-hero .branding .logo {
+    margin: 0 auto;
+  }
+  .site-hero .branding .titles {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* Emergency override: ensure header elements are not constrained to 180px on narrow screens */
+@media (max-width: 480px) {
+  .site-hero .hero-inner.wrap,
+  .site-hero .hero-inner,
+  .site-hero .branding,
+  .site-hero .titles {
+    width: auto !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  .site-hero .titles {
+    display: block !important;
+  }
 }
