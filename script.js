@@ -8,15 +8,6 @@ const statusEl = document.getElementById("status");
 const container = document.getElementById("playlistContainer");
 const embedPlayer = document.getElementById("embedPlayer");
 
-// layout radio buttons
-const layoutRadios = document.querySelectorAll('input[name="layout"]');
-layoutRadios.forEach((r) =>
-  r.addEventListener("change", () => {
-    container.classList.toggle("grid", r.value === "grid" && r.checked);
-    container.classList.toggle("list", r.value === "list" && r.checked);
-  })
-);
-
 async function loadPlaylist() {
   container.innerHTML = "";
   statusEl.textContent = "";
@@ -102,11 +93,9 @@ async function fetchAllPlaylistItems(apiKey, playlistId) {
 
 function renderItems(items) {
   container.innerHTML = "";
-  const isGrid = document.querySelector(
-    'input[name="layout"][value="grid"]'
-  ).checked;
-  container.classList.toggle("grid", isGrid);
-  container.classList.toggle("list", !isGrid);
+  const isGrid = true; // Always use grid layout
+  container.classList.add("grid");
+  container.classList.remove("list");
 
   items.forEach((item) => {
     const vidId = item.snippet.resourceId.videoId;
